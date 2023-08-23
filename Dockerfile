@@ -1,7 +1,6 @@
 FROM registry.redhat.io/rhel9/python-39:1-133.1692772345 as builder
 
 COPY requirements.txt requirements.txt
-RUN apk add gcc musl-dev python3-dev libffi-dev openssl-dev cargo
 RUN pip install --upgrade pip
 RUN pip install cryptography=3.1.1 --no-binary cryptography
 RUN pip install -r requirements.txt
